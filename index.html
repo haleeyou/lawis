@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags and title here -->
+    <style>
+        /* Your existing styles here */
+		
+		 body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        header {
+            background-color: #ffff00;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: relative;
+			
+        }
+		
+		header p{
+			color: #000000;
+		}
+		
+        header img {
+            position: absolute;
+            top: 1em;
+            left: 1em;
+            width: 50px;
+            height: auto;
+        }
+        nav {
+            background-color: #0000ff;
+            text-align: center;
+            padding: 0.5em;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1em;
+            transition: color 0.3s ease-in-out;
+        }
+        nav a:hover {
+            color: #ffff00;
+        }
+		
+		h1{
+			color: #000000;
+		}
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 2em;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+		
+		button{
+			background-color: #0000ff;
+			color : #000000;
+		}
+        footer {
+            text-align: center;
+            padding: 0.5em;
+            background-color: #0000ff;
+            color: white;
+        }
+		
+		.services-container {
+            display: flex;
+            overflow: hidden;
+        }
+		
+        .service-card {
+            /* Your existing styles here */
+			flex: 0 0 calc(21% - 20px);
+            background-color: white;
+            border: 1px solid #ddd;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .service-content {
+            max-height: 100px;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+
+        .read-more {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background-color: #0000ff;
+            padding: 5px 10px;
+            cursor: pointer;
+            color: #000000;
+        }
+		
+		.expanded {
+            max-height: none;
+        }
+		
+    </style>
+</head>
+<body>
+    <!-- Your existing content here -->
+	 <header>
+        <img src="company-logo.png" alt="Company Logo">
+        <h1>Lawis Active Services</h1>
+        <p>Your Trusted Partner for Quality Metal Fabrication</p>
+    </header>
+    <nav>
+        <a href="#home">Home</a>
+		<a href="#projects">Projects</a>
+        <a href="#services">Our Services</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
+
+    <div class="container" id="home">
+        <h2>Welcome to Lawis Active Services</h2>
+        <p>We are a leading metalwork fabrication company specializing in custom solutions for a wide range of industries.</p>
+    </div>
+
+    <div class="container" id="services">
+        <h2>Our Services</h2>
+        <div class="services-container">
+            <div class="service-card">
+                <h3>Sheet Metal Fabrication</h3>
+                <div class="service-content">
+                    <p>Our expert team specializes in precision sheet metal fabrication which has made us 
+				stand out as the household name for all metal works project and this is a well now fact as our work speaks greatly for us
+				and our clients can testify to this...</p>
+                </div>
+                <p class="read-more">Read More</p>
+            </div>
+            <div class="service-card">
+                <h3>Welding and Assembly</h3>
+                <div class="service-content">
+                    <p>We offer top-notch welding and assembly services for your metal projects...</p>
+                </div>
+                <p class="read-more">Read More</p>
+            </div>
+            <!-- Add more service cards here -->
+			<div class="service-card">
+                <h3>Procurement and Supply</h3>
+                <div class="service-content">
+                    <p>We offer top-notch welding and assembly services for your metal projects...</p>
+                </div>
+                <p class="read-more">Read More</p>
+            </div>
+			
+			<div class="service-card">
+                <h3>Haulage and Logistics</h3>
+                <div class="service-content">
+                    <p>We offer top-notch welding and assembly services for your metal projects...</p>
+                </div>
+                <p class="read-more">Read More</p>
+            </div>
+        </div>
+    </div>
+	
+	 <div class="container" id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any inquiries or would like to discuss your project, feel free to contact us: 08035157577</p>
+		<p>email address: lawisnig@yahoo.com
+		<form action="#" method="post">
+			<ul>
+			<label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+			</ul>
+			<ul>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+			</ul>
+			<ul>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <button type="submit">Send Message</button>
+			</ul>
+        </form>
+    </div>
+    
+    <footer>
+        &copy; 2023 Marali Works
+    </footer>
+    
+	
+    <script>
+        const readMoreButtons = document.querySelectorAll('.read-more');
+
+        readMoreButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const serviceCard = button.closest('.service-card');
+                const serviceContent = serviceCard.querySelector('.service-content');
+                serviceContent.classList.toggle('expanded');
+                if (serviceContent.classList.contains('expanded')) {
+                    button.textContent = 'Read Less';
+                } else {
+                    button.textContent = 'Read More';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
